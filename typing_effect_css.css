@@ -1,0 +1,12 @@
+#typing-word {
+    color: #d32f2f;
+    font-weight: bold;
+    border-right: 2px solid #d32f2f;
+    padding-right: 5px;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { border-color: transparent; }
+    50% { border-color: #d32f2f; }
+}

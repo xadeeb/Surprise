@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday to My Special Someone!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel = "stylesheet" href="login.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            color: #5a3e36;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            position: relative;
+        }
+        
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 5rem;
+            color: #d32f2f;
+            text-shadow: 3px 3px 0 rgba(255, 255, 255, 0.5);
+            margin-bottom: 10px;
+            animation: pulse 2s infinite;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #5d4037;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .message-container {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 30px auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            max-width: 800px;
+        }
+        
+        .message-container:before {
+            content: "";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 30px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50"><path d="M0,0 Q50,30 100,0" fill="rgba(255,255,255,0.85)" /></svg>');
+            background-size: cover;
+        }
+        
+        .message {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .signature {
+            text-align: right;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: #d32f2f;
+            margin-top: 20px;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .photo {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            position: relative;
+            height: 250px;
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .photo:hover {
+            transform: translateY(-10px) scale(1.03);
+        }
+        
+        .photo i {
+            font-size: 4rem;
+            color: #e0e0e0;
+        }
+        
+        .photo-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        .wishes {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .wish {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            width: 280px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .wish:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .wish h3 {
+            color: #d32f2f;
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 1.4rem;
+        }
+        
+        .wish p {
+            text-align: center;
+            font-size: 0.95rem;
+        }
+        
+        .wish i {
+            display: block;
+            text-align: center;
+            font-size: 2.5rem;
+            color: #f57c00;
+            margin-bottom: 15px;
+        }
+        
+        .special-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 50px auto;
+            text-align: center;
+            max-width: 800px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .special-section h2 {
+            color: #d32f2f;
+            margin-bottom: 25px;
+            font-size: 2.2rem;
+        }
+        
+        .heart-btn {
+            background: #e91e63;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(233, 30, 99, 0.4);
+            font-weight: 600;
+            margin-top: 20px;
+        }
+        
+        .heart-btn:hover {
+            background: #c2185b;
+            transform: scale(1.05);
+        }
+        
+        .hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 5;
+        }
+        
+        .heart {
+            position: absolute;
+            color: rgba(233, 30, 99, 0.7);
+            font-size: 1.5rem;
+            animation: float 5s ease-in-out;
+            opacity: 0;
+            z-index: 10;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #5d4037;
+            font-size: 0.9rem;
+            margin-top: 40px;
+        }
+        
+        .confetti {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+        
+        .confetti-piece {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            z-index: 1000;
+        }
+        
+        .cake {
+            width: 200px;
+            height: 150px;
+            margin: 30px auto;
+            position: relative;
+        }
+        
+        .cake-layer {
+            position: absolute;
+            width: 180px;
+            height: 40px;
+            background: #f8bbd0;
+            border-radius: 50%;
+            bottom: 0;
+            left: 10px;
+        }
+        
+        .cake-layer:nth-child(2) {
+            width: 160px;
+            height: 35px;
+            bottom: 35px;
+            left: 20px;
+            background: #f48fb1;
+        }
+        
+        .cake-layer:nth-child(3) {
+            width: 140px;
+            height: 30px;
+            bottom: 65px;
+            left: 30px;
+            background: #f06292;
+        }
+        
+        .cake-layer:nth-child(4) {
+            width: 120px;
+            height: 25px;
+            bottom: 90px;
+            left: 40px;
+            background: #ec407a;
+        }
+        
+        .candle {
+            position: absolute;
+            width: 8px;
+            height: 40px;
+            background: #ffd54f;
+            bottom: 115px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 4px;
+        }
+        
+        .flame {
+            position: absolute;
+            width: 12px;
+            height: 20px;
+            background: #ffeb3b;
+            border-radius: 50% 50% 20% 20%;
+            bottom: 155px;
+            left: 50%;
+            transform: translateX(-60%);
+            box-shadow: 0 0 20px #ff9800;
+            animation: flicker 0.8s infinite alternate;
+        }
+        
+        /* Animations */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes float {
+            0% { 
+                transform: translateY(100px) rotate(0deg); 
+                opacity: 0; 
+            }
+            10% { 
+                opacity: 1; 
+            }
+            90% { 
+                opacity: 1; 
+            }
+            100% { 
+                transform: translateY(-100px) rotate(360deg); 
+                opacity: 0; 
+            }
+        }
+        
+        @keyframes flicker {
+            0% { transform: translateX(-50%) scale(1); }
+            25% { transform: translateX(-50%) scale(1.1); }
+            50% { transform: translateX(-50%) scale(0.9); }
+            75% { transform: translateX(-50%) scale(1.05); }
+            100% { transform: translateX(-50%) scale(1); }
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 { font-size: 3.5rem; }
+            .subtitle { font-size: 1.2rem; }
+            .message-container { padding: 25px; }
+            .gallery { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+        }
+
+        .typing-effect {
+  font-family: monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 20ch; /* Adjust the width to fit your text */
+  border-right: 2px solid black;
+  animation: typing 3s steps(20, end), blink 0.5s step-end infinite;
+}
+
+.photo-modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.photo-modal img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+    animation: zoomIn 0.5s ease;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 2.5rem;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 20ch;
+  }
+}
+
+@keyframes blink {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: black;
+  }
+}
+
+    </style>
+    <link rel="stylesheet" href="styles.cs">
+    <link rel="stylesheet" href="typing_effect_css.css">
+
+</head>
+<body>
+
+    <!-- 🔒 LOGIN OVERLAY -->
+  <div id="login-overlay">
+    <div class="login-box">
+      <h2>Login to Unlock 🎁</h2>
+      <input type="text" id="username" placeholder="Enter Username">
+      <input type="password" id="password" placeholder="Enter Password">
+      <button onclick="checkLogin()">Unlock</button>
+    </div>
+  </div>
+
+    <!-- Confetti container -->
+    <div class="confetti" id="confetti"></div>
+    
+    <div class="container">
+        <br>
+        <br>
+        <br>
+        <br>
+        <header>
+            <h1>Happy Birthday, <span id="typing-word"></span></h1>
+            <p class="subtitle">On this special day, I wanted to create something as unique and wonderful as you are</p>
+            <br>
+            <br>
+            <br>
+            
+            <div class="cake">
+                <div class="cake-layer"></div>
+                <div class="cake-layer"></div>
+                <div class="cake-layer"></div>
+                <div class="cake-layer"></div>
+                <div class="candle"></div>
+                <div class="flame"></div>
+            </div>
+        </header>
+        <br>
+        
+        
+        <div class="message-container">
+            <div class="message">
+                <p>To the most amazing person I know,</p>
+                <p>Happy Birthday! 🎉 Today is all about celebrating you and the incredible person you are. I wanted to create something special to show how much you mean to me.</p>
+                <p>From the moment I met you, my world has been brighter. Your smile lights up every room, your laughter is contagious, and your kindness touches everyone around you. Tere sath bitaya hua har ek pal mare lie bohot kash haa.</p>
+                <p>I admire your strength, your intelligence, and your beautiful soul. You inspire me to be a better person every single day. I feel so lucky to know you and to be part of your life.</p>
+                <p>On your special day, I wish you all the joy, love, and happiness in the world. May this year bring you closer to your dreams and fill your life with wonderful adventures and beautiful memories.</p>
+                <p>Thank you for being you. The world is a better place with you in it.</p>
+            </div>
+            <div class="signature">With all my heart,<br>Mohd Adeeb</div>
+        </div>
+        
+        <div class="gallery">
+            <div class="photo" data-image="images/first-meetup.jpeg">
+                <i class="fas fa-camera"></i>
+                <div class="photo-text">Our First Meetup</div>
+            </div>
+            <div class="photo">
+                <i class="fas fa-smile"></i>
+                <div class="photo-text">Your Beautiful Smile</div>
+            </div>
+            <div class="photo">
+                <i class="fas fa-mountain"></i>
+                <div class="photo-text">Adventures Together</div>
+            </div>
+            <div class="photo">
+                <i class="fas fa-star"></i>
+                <div class="photo-text">Special Memories</div>
+            </div>
+        </div>
+        
+        <div class="wishes">
+            <div class="wish">
+                <i class="fas fa-gift"></i>
+                <h3>Happiness</h3>
+                <p>May your day be filled with joy and laughter that lasts throughout the year!</p>
+            </div>
+            <div class="wish">
+                <i class="fas fa-heart"></i>
+                <h3>Love</h3>
+                <p>May you be surrounded by love from family, friends, and everyone who cares about you! : )</p>
+            </div>
+            <div class="wish">
+                <i class="fas fa-magic"></i>
+                <h3>Magic</h3>
+                <p>May this year bring you magical moments and wonderful surprises around every corner!</p>
+            </div>
+        </div>
+        
+        <div class="special-section">
+            <h2>A Special Message Just For You</h2>
+            <p>Click the button below to reveal a heartfelt surprise!</p>
+            <button class="heart-btn" onclick="revealHearts()">
+                <i class="fas fa-heart"></i> Click Me
+            </button>
+            <div class="hearts" id="hearts"></div>
+        </div>
+    </div>
+    <!-- Photo Popup Modal -->
+    <div id="photo-modal" class="photo-modal">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <img id="modal-image" src="" alt="Popup Photo">
+    </div>
+
+    
+    <footer>
+        <p>Created with ❤ for the most special person on their birthday | 17/8/2025</p>
+        <p>This website is a unique birthday gift - made just for you! with love by me : )</p>
+    </footer>
+
+
+    <script>
+
+        function checkLogin() {
+            const user = document.getElementById("username").value;
+            const pass = document.getElementById("password").value;
+
+            const validUser = "adeeb";  // ✅ apna username
+            const validPass = "1708";   // ✅ apna password
+
+                if (user === validUser && pass === validPass) {
+                    document.getElementById("login-overlay").style.display = "none";
+                    document.getElementById("birthday-content").style.display = "block";
+                } else {
+                    alert("❌ Invalid Username or Password!");
+                }
+        }
+
+
+        // Create confetti effect (simplified working version)
+        function createConfetti() {
+    const confettiContainer = document.getElementById('confetti');
+    const colors = ['#ff9a9e', '#fad0c4', '#a18cd1', '#fbc2eb', '#8fd3f4', '#84fab0'];
+    const pieces = 150;
+    
+    for (let i = 0; i < pieces; i++) {
+        const piece = document.createElement('div');
+        piece.classList.add('confetti-piece');
+        piece.style.width = (Math.random() * 10 + 5) + 'px';
+        piece.style.height = piece.style.width;
+        piece.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        piece.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+        piece.style.left = Math.random() * 100 + 'vw';
+        piece.style.top = '-10px';
+        piece.style.opacity = Math.random() * 0.8 + 0.2;
+        piece.style.zIndex = '1000';
+
+        // ✅ Use backticks here to properly insert values
+        const animation = piece.animate([
+            { 
+                transform: 'translateY(0) rotate(0deg)', 
+                opacity: piece.style.opacity 
+            },
+            { 
+                transform: `translateY(${window.innerHeight + 100}px) rotate(${Math.random() * 360}deg)`, 
+                opacity: 0 
+            }
+        ], {
+            duration: Math.random() * 3000 + 3000,
+            easing: 'cubic-bezier(0,0.9,0.57,1)',
+            delay: Math.random() * 2000
+        });
+
+        confettiContainer.appendChild(piece);
+
+        animation.onfinish = () => {
+            piece.remove();
+        };
+    }
+}
+
+        
+        // Create hearts animation (fixed version)
+        function revealHearts() {
+            const heartsContainer = document.getElementById('hearts');
+            heartsContainer.innerHTML = '';
+            
+            for (let i = 0; i < 50; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.innerHTML = '❤';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.top = Math.random() * 100 + '%';
+                heart.style.fontSize = (Math.random() * 2 + 1) + 'rem';
+                heart.style.animationDelay = (Math.random() * 2) + 's';
+                
+                heartsContainer.appendChild(heart);
+            }
+            
+            // Show hidden message
+            setTimeout(() => {
+                alert("I just wanted to say... you mean the world to me! Hope you have the most amazing birthday ever! ❤");
+            }, 2000);
+        }
+        
+        // Initialize the page
+        window.onload = function() {
+            // Initial confetti
+            createConfetti();
+            
+            // Continuous confetti every 5 seconds
+            setInterval(createConfetti, 5000);
+            
+            // Add photo hover effect
+            const photos = document.querySelectorAll('.photo');
+            photos.forEach(photo => {
+                photo.addEventListener('mouseenter', () => {
+                    photo.style.transform = 'translateY(-10px) scale(1.03)';
+                });
+                
+                photo.addEventListener('mouseleave', () => {
+                    photo.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        };
+
+        // Show image modal when photo is clicked
+        document.querySelectorAll('.photo').forEach(photo => {
+            photo.addEventListener('click', function () {
+                const imageSrc = this.getAttribute('data-image');
+                document.getElementById('modal-image').src = imageSrc;
+                document.getElementById('photo-modal').style.display = 'flex';
+            });
+        });
+
+        // Close modal
+        function closeModal() {
+            document.getElementById('photo-modal').style.display = 'none';
+        }
+
+        document.getElementById('photo-modal').addEventListener('click', function(e) {
+            if (e.target.id === 'photo-modal') {
+                closeModal();
+            }
+        });
+
+
+    </script>
+    
+    <script src="typing_effect.js"></script>
+
+
+</body>
+</html>
