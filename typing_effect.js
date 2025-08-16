@@ -1,4 +1,4 @@
-const words = ['Beautiful', 'Gorgeous', 'Amazing', 'Lovely', 'Queen', 'Angel', 'mari Life line ']; // Final word = 'Angel'
+const words = ['Beautiful', 'Gorgeous', 'Amazing', 'Lovely', 'Queen', 'Angel', 'meri Tammana ']; // Final word = 'Tammana'
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -48,3 +48,4 @@ function typeWord() {
 document.addEventListener('DOMContentLoaded', () => {
   typeWord();
 });
+
