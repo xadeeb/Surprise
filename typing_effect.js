@@ -1,8 +1,8 @@
-const words = ['Beautiful', 'Gorgeous', 'Amazing', 'Lovely', 'Queen', 'Angel', 'meri Tammana ']; // Final word = 'Tammana'
+const words = ['Beautiful', 'Gorgeous', 'Amazing', 'Lovely', 'Queen', 'Angel','Gorgeous', 'Amazing', 'Lovely', 'Queen','Gorgeous', 'Amazing', 'Lovely', 'Queen',"Humsafar", 'meri Tammana ']; // Final word = 'Tammana'
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
-const typingSpeed = 150;
+const typingSpeed = 100;
 const erasingSpeed = 100;
 const delayBetweenWords = 1500;
 
@@ -48,4 +48,5 @@ function typeWord() {
 document.addEventListener('DOMContentLoaded', () => {
   typeWord();
 });
+
 
